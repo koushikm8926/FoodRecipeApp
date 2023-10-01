@@ -6,7 +6,7 @@ import {
   TextInput,
   View,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   widthPercentageToDP as wp,
@@ -17,6 +17,9 @@ import Categories from "../components/categories";
 
 
 const HomeScreen = () => {
+
+  const[activeCategory, setActiveCategory]= useState('Beef')
+
   return (
     <View className="flex-1 bg-white">
       <StatusBar style="dark" />
@@ -70,7 +73,7 @@ const HomeScreen = () => {
 
 {/* categories section  */}
         <View>
-            <Categories/>
+            <Categories activeCategory={activeCategory} setActiveCategory={setActiveCategory}/>
         </View>
 
 
